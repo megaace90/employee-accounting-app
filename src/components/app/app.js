@@ -1,3 +1,4 @@
+//cd employee-accounting-app
 import AppInfo from '../app-info/app-info';
 import SearchInput from '../search-input/search-input';
 import SearchFilter from '../searh-filter/search-filter';
@@ -8,9 +9,9 @@ import './app.css';
 function App () {
 
 	const data = [
-		{name: 'Karl', salary: 1200, increase: false, id: 'emp1'},
-		{name: 'Vova', salary: 800, increase: true, id: 'emp1'},
-		{name: 'Alex', salary: 1800, increase: false, id: 'emp1'}
+		{name: 'Karl', salary: 1200, increase: false, like: false, id: 'emp1'},
+		{name: 'Vova', salary: 800, increase: true, like: false, id: 'emp2'},
+		{name: 'Alex', salary: 1800, increase: false, like: false, id: 'emp3'}
 	];
 
 	return (
