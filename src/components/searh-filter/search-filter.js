@@ -1,25 +1,30 @@
 import './search-filter.css';
 
-function SearchFilter () {
-	return (
-		<div className="btn-group">
-			<button 
-						className="btn btn-light"
-						type="button">
-						Все сотрудники
+const SearchFilter = (props) => {
+	const buttonsData = [
+		{name: 'all', label: 'Все сотрудники'},
+		{name: 'like', label: 'На повышение!'},
+		{name: 'salaryMoreThen1000', label: 'ЗП больше 1000$'}
+	];
+	const buttons = buttonsData.map(({name, label}) => {
+		const active = props.filter === name;
+		const clazz = active ? `btn-light` : `btn-outline-light`;
+		return (
+			<button className={`btn ${clazz}`}
+							type="button"
+							key={name}
+							onClick={() => props.onFilterInfo(name)}
+							>
+							{label}
 			</button>
-			<button 
-						className="btn btn-outline-light"
-						type="button">
-						На повышение!
-			</button>
-			<button 
-						className="btn btn-outline-light"
-						type="button">
-						ЗП больше 1000$
-			</button>
-		</div>
-	);
+		)
+	})
+		return (
+			<div className="btn-group">
+				{buttons}
+			</div>
+		);
 }
+	
 
 export default SearchFilter;
